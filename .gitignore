@@ -1,0 +1,18 @@
+## ignore local settings file
+settings.py
+## vs code configs
+.vscode/*
+## python cache
+**/__pycache__/*
+## npm packages
+node_modules/*
+##database
+db.sqlite3
+## database migrations
+migrations
+
+##bootstrap files
+bootstrap*
+
+##bootstrap files
+jquery*
