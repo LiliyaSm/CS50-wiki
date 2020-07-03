@@ -17,16 +17,12 @@
     <h2 class = "text-center">Create a new page here</h2>
     <form method="post" action = "{% url 'new_page' %}" >
         {% csrf_token %}
-        <label for=""><strong>Enter a title</strong></label>
-        <input name="title" type="text" class="form-control  mb-4">
-        <label for=""><strong>Enter a description</strong></label>
-        <textarea class="form-control" name="description" id="" rows="17"></textarea>
+        <strong>{{ form.title.label_tag }}</strong>
+        {{ form.title }}
+        <strong>{{ form.description.label_tag }}</strong>
+        {{ form.description }} 
         <button type="submit" class="btn btn-info mt-3" >Create Page</button>
-    
+        {{ form.errors }}
     </form>
-                <!-- <br> -->
-    
-                <!-- <a href="{% url 'index'%}">Go back to list</a> -->
-</div>
-
-{% endblock %}
+            </div>            
+            {% endblock %}

@@ -18,8 +18,8 @@
         {% csrf_token %}
 
         <label for=""><strong>Edit a description</strong></label>
-        <textarea class="form-control" name="description" id="" rows="17" >{{ content }}</textarea>
-        <button type="submit" class="btn btn-info mt-3" >Edit Page</button>
+        <textarea class="form-control" name="description" id="" rows="17" required>{{ content }}</textarea>
+        <button type="submit" class="btn btn-info mt-3" >Save Page</button>
     
     </form>
 
