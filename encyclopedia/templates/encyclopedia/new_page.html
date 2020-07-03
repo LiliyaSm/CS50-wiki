@@ -1,0 +1,32 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{name}}
+{% endblock %}
+
+{% block body %}
+    {% if messages %}
+        <div class="messages text-center">
+            {% for message in messages %}
+            <h3{% if message.tags %} style="color: red" class="{{ message.tags }}"{% endif %}>{{ message }}</h3>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+<div  class = "container">
+    <h2 class = "text-center">Create a new page here</h2>
+    <form method="post" action = "{% url 'new_page' %}" >
+        {% csrf_token %}
+        <label for=""><strong>Enter a title</strong></label>
+        <input name="title" type="text" class="form-control  mb-4">
+        <label for=""><strong>Enter a description</strong></label>
+        <textarea class="form-control" name="description" id="" rows="17"></textarea>
+        <button type="submit" class="btn btn-info mt-3" >Create Page</button>
+    
+    </form>
+                <!-- <br> -->
+    
+                <!-- <a href="{% url 'index'%}">Go back to list</a> -->
+</div>
+
+{% endblock %}

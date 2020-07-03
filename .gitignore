@@ -11,8 +11,11 @@ db.sqlite3
 ## database migrations
 migrations
 
-##bootstrap files
+## bootstrap files
 bootstrap*
 
-##bootstrap files
+## jquery files
 jquery*
+
+## markdown files
+*.md
