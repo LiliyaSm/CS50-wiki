@@ -3,11 +3,11 @@ from django import forms
 from django.http import HttpResponse, HttpResponseNotFound
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.core.files.storage import default_storage
+from django.core.validators import RegexValidator
 import markdown2
 import re
 import random
-from django.core.files.storage import default_storage
-from django.core.validators import RegexValidator
 
 from . import util
 
@@ -16,7 +16,7 @@ class CreatePageForm(forms.Form):
     title = forms.CharField(label="Enter a title", max_length=30,
                             widget=forms.TextInput(
                                 attrs={'class': 'form-control mb-4'}),
-                            validators=[RegexValidator('^[a-zA-Z0-9 -]*$', message="Title must be between 1 to 30 characters, contain only Latin letters, digits, dashes and spaces")])
+                            validators=[RegexValidator('^[a-zA-Z0-9 -]{1,30}$', message="Title must be between 1 to 30 characters, contain only Latin letters, digits, dashes and spaces")])
     description = forms.CharField(widget=forms.Textarea(
         attrs={'class': 'form-control', "rows": "17"}), label="Enter a description", max_length=1000)
 
